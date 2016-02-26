@@ -1,6 +1,7 @@
-app.controller('MainController', ['$scope','$http','service', function ($scope, $http, service) {
+app.controller('MainController', ['$scope','$http','jsonService', function ($scope, $http, jsonService) {
   console.log('made it to main control');
-  service.get().then(function (d) {
-    console.log(d);
-  })
+  jsonService.get().then(function (data) {
+    console.log(data);
+    $scope.data = data;
+    })
   }])

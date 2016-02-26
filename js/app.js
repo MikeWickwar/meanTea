@@ -1,6 +1,6 @@
 var app = angular.module('meantea', ['ngRoute']);
 
-app.factory('service', function($http) {
+app.factory('jsonService', function($http) {
     var promise;
     var jsondata = {
         get: function() {
