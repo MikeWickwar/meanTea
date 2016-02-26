@@ -1,0 +1,22 @@
+body{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.topHeader{
+  color: white;
+  background-color: red;
+  text-align: center;
+  height: 10vh;
+  font-size: 150%;
+}
+.mainHeaderBanner{
+  font-size: 400%;
+  font-weight: 600;
+  font-style: italic;
+  color: red;
+}
+.navbar{
+  padding-left: 5%;
+  padding-top: 1%;
+}
