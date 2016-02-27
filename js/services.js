@@ -38,10 +38,18 @@ app.factory('cartService', function () {
       return cart
     },
     post: function (item) {
-      console.log(cart, item);
-      if (($.inArray(item, cart)) >= 0) {
-        console.log('Iam already inhere');
-      }
+      cart.forEach(function (thingInCart) {
+        console.log(thingInCart, item);
+        if (item.item === thingInCart.item) {
+          console.log('Iam already inhere');
+          item.quantity = parseInt(item.quantity) + parseInt(thingInCart.quantity);
+          item = {item:item.item, quantity:item.quantity};
+          cart.splice(cart.indexOf(thingInCart), 1)
+          console.log(thingInCart);
+        }else{
+        }
+
+      })
       cart.push(item)
       return cart
     }
