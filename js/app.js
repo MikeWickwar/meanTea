@@ -1,7 +1,5 @@
 var app = angular.module('meantea', ['ngRoute']);
 
-
-
 app.config(function($routeProvider) {
     $routeProvider
       .when('/', {

@@ -38,6 +38,10 @@ app.factory('cartService', function () {
       return cart
     },
     post: function (item) {
+      console.log(cart, item);
+      if (($.inArray(item, cart)) >= 0) {
+        console.log('Iam already inhere');
+      }
       cart.push(item)
       return cart
     }
