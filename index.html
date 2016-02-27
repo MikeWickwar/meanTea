@@ -6,8 +6,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/index.css" media="screen" title="no title" charset="utf-8">
   </head>
-  <body ng-controller="MainController" class="">
-    <header class="col-lg-10 col-lg-offset-1">
+  <body ng-controller="MainController" class="col-lg-10 col-lg-offset-1">
+    <header class="">
       <div class="topHeader row">
         Guaranteed Awesome!
       </div>
@@ -26,13 +26,20 @@
         </div>
       </nav>
     </header>
-    <form class="categories" >
-      <select name="select" value="" >
-        <option value="" ng-repeat="cat in categories">{{cat}}</option>
-      </select>
-    </form>
+    <div class="searchBars">
+      <form class="categories">
+        Search by Category:
+        <select name="select" value="">
+          <option value="" ng-repeat="cat in categories">{{cat}}</option>
+        </select>
+      </form>
+      <span>Search By Name:
+        <input class="searchbar headspace" type="text" ng-model="searchable" placeholder="Search...">
+        </input>
+      </span>
+    </div>
     <div ng-repeat="each in data.data" class="col-lg-10 col-lg-offset-1">
-      <!-- {{each.price / 100 | currency}} -->
+      {{each.price / 100 | currency}}
     </div>
     <div ng-view class="body col-lg-10 col-lg-offset-1">
     </div>
