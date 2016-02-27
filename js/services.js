@@ -46,7 +46,6 @@ app.factory('cartService', function () {
           item = {item:item.item, quantity:item.quantity};
           cart.splice(cart.indexOf(thingInCart), 1)
           console.log(thingInCart);
-        }else{
         }
 
       })

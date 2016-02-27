@@ -17,15 +17,16 @@
       <option value="price">lowest to highest</option>
     </select>
   </span>
+  <a href="#"><button type="button" class="btn btn-primary">Checkout | Bag:({{bagsize}})</button></a>
 </div>
 <div ng-repeat="item in data | filter:searchable | filter:sortByCat | orderBy:sortByPrice" class="items col-lg-10 col-lg-offset-1">
-  <img class="col-lg-4" src={{item.imageUrl}} alt="" />
+  <img class="col-lg-4" src={{item.imageUrl}} alt="tea photo"/>
   <div class="topitems">
     <h1>{{item.name}}</h1>
     <span class="addtocart">
       <h1>Quantity</h1>
       <my-Quan></my-Quan>
-      <button class="btn btn-default" type="submit" ng-click="addItem({item: item.name, quantity:quantity})" name="button">Add To Cart</button>
+      <button class="btn btn-default" type="submit" ng-click="changeBag(); addItem({item: item.name, quantity:quantity})" name="button">Add To Cart</button>
     </span>
   </div>
   <h4>Price: {{item.price / 100 | currency}}</h4>

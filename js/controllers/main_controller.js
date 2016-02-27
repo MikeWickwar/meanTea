@@ -3,11 +3,18 @@ app.controller('MainController', ['$scope','$http','jsonService','catsService','
   console.log('made it to main control');
   var cats = [];
   $scope.sortby = "";
-
+  $scope.bagsize= "Bag is empty"
   $scope.addItem = function (item) {
     cartService.post(item)
-    var test = cartService.get()
-    console.log(test, "here hello!");
+  }
+  $scope.changeBag = function () {
+      console.log('you got it');
+      var cart  = cartService.get()
+      cart.forEach(function (item) {
+        console.log(item.quantity);
+        $scope.bagsize =+ item.quantity;
+      })
+
   }
 
   jsonService.get().then(function (data) {
