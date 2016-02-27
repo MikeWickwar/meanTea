@@ -1,11 +1,13 @@
-app.controller('MainController', ['$scope','$http','jsonService','catsService', function ($scope, $http, jsonService, catsService) {
+app.controller('MainController', ['$scope','$http','jsonService','catsService','cartService',
+ function ($scope, $http, jsonService, catsService, cartService) {
   console.log('made it to main control');
   var cats = [];
   $scope.sortby = "";
-  $scope.changeSorter = function (value) {
-    console.log('her chaning sorter');
-    console.log(value);
-    console.log($scope.sortby);
+
+  $scope.addItem = function (item) {
+    cartService.post(item)
+    var test = cartService.get()
+    console.log(test, "here hello!");
   }
 
   jsonService.get().then(function (data) {

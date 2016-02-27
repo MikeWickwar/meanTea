@@ -30,3 +30,17 @@ app.factory('catsService', function () {
   }
   return jsondata
 })
+
+app.factory('cartService', function () {
+  var cart = []
+  var jsondata = {
+    get: function () {
+      return cart
+    },
+    post: function (item) {
+      cart.push(item)
+      return cart
+    }
+  }
+  return jsondata
+})

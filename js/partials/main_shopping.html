@@ -24,11 +24,11 @@
     <h1>{{item.name}}</h1>
     <form class="addtocart">
       <h1>Quantity</h1>
-      <select class="quan" name="quan">
+      <select class="quan" name="quan" ng-model="quantity">
         <option value='1'></option>
         <option value="{{$index+2}}" ng-repeat="n in [].constructor(9) track by $index">{{$index+2}}</option>
       </select>
-      <button class="btn btn-default" type="submit" ng-click="addToCart" name="button">Add To Cart</button>
+      <button class="btn btn-default" type="submit" ng-click="addItem({item: item.name, quantity:quantity})" name="button">Add To Cart</button>
     </form>
   </div>
   <h4>Price: {{item.price / 100 | currency}}</h4>
