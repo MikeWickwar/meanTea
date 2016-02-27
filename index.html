@@ -29,25 +29,34 @@
     <div class="searchBars">
       <form class="categories">
         Search by Category:
-        <select name="select" value="">
-          <option value="" ng-repeat="cat in categories">{{cat}}</option>
+        <select name="select" ng-model="sortByCat">
+          <option value=""></option>
+          <option value="{{cat}}" ng-repeat="cat in categories">{{cat}}</option>
         </select>
       </form>
       <span>Search By Name:
         <input class="searchbar headspace" type="text" ng-model="searchable" placeholder="Search...">
         </input>
       </span>
+      <span>Sort By Price
+        <select class="select" name="priceSort" ng-model="sortByPrice">
+          <option value=""></option>
+          <option value="price">highest to lowest</option>
+          <option value="-price">lowest to highest</option>
+        </select>
+      </span>
     </div>
-    <div ng-repeat="item in data | filter:searchable" class="items col-lg-10 col-lg-offset-1">
+    <div ng-repeat="item in data | filter:searchable | filter:sortByCat | orderBy:sortByPrice" class="items col-lg-10 col-lg-offset-1">
       <img class="col-lg-4" src={{item.imageUrl}} alt="" />
       <div class="topitems">
         <h1>{{item.name}}</h1>
         <form class="addtocart">
           <h1>Quantity</h1>
           <select class="quan" name="quan">
-            <option value="{{$index}}" ng-repeat="n in [].constructor(10) track by $index">{{$index}}</option>
+            <option value='1'></option>
+            <option value="{{$index+2}}" ng-repeat="n in [].constructor(9) track by $index">{{$index+2}}</option>
           </select>
-          <button class="button" type="submit" ng-click="addToCart" name="button">Add To Cart</button>
+          <button class="btn btn-default" type="submit" ng-click="addToCart" name="button">Add To Cart</button>
         </form>
       </div>
 

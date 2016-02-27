@@ -3,6 +3,9 @@ body{
   justify-content: center;
   flex-direction: column;
 }
+button{
+  height: 30px;
+}
 .topHeader{
   color: white;
   background-color: red;

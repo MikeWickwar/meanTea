@@ -20,7 +20,6 @@ app.factory('catsService', function () {
         data.forEach(function (item) {
            item.categories.forEach(function (cat) {
              if (($.inArray(cat, categories)) >= 0) {
-               console.log('i exsist');
              }else {
                categories.push(cat)
              }
