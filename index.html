@@ -26,7 +26,12 @@
         </div>
       </nav>
     </header>
-    <div ng-repeat="each in data.data col-lg-10 col-lg-offset-1">
+    <form class="categories" >
+      <select name="select" value="" >
+        <option value="" ng-repeat="cat in categories">{{cat}}</option>
+      </select>
+    </form>
+    <div ng-repeat="each in data.data" class="col-lg-10 col-lg-offset-1">
       <!-- {{each.price / 100 | currency}} -->
     </div>
     <div ng-view class="body col-lg-10 col-lg-offset-1">
@@ -36,6 +41,7 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="./js/app.js"></script>
+    <script type="text/javascript" src="./js/services.js"></script>
     <script type="text/javascript" src="./js/controllers/main_controller.js"></script>
     <script type="text/javascript" src="./js/directives/main.js"></script>
   </body>
