@@ -38,8 +38,27 @@
         </input>
       </span>
     </div>
-    <div ng-repeat="each in data.data" class="col-lg-10 col-lg-offset-1">
-      {{each.price / 100 | currency}}
+    <div ng-repeat="item in data | filter:searchable" class="items col-lg-10 col-lg-offset-1">
+      <img class="col-lg-4" src={{item.imageUrl}} alt="" />
+      <div class="topitems">
+        <h1>{{item.name}}</h1>
+        <form class="addtocart">
+          <h1>Quantity</h1>
+          <select class="quan" name="quan">
+            <option value="{{$index}}" ng-repeat="n in [].constructor(10) track by $index">{{$index}}</option>
+          </select>
+          <button class="button" type="submit" ng-click="addToCart" name="button">Add To Cart</button>
+        </form>
+      </div>
+
+      <h4>Price: {{item.price / 100 | currency}}</h4>
+      <h4>Caffeine Scale: {{item.caffeineScale}}</h4>
+      <h4>Ingredients: {{item.ingredients}}</h4>
+      <h4>Rating: {{item.rating}}</h4>
+      <h4>In Stock: {{item.inStock}}</h4>
+      <h4> Categories:
+        <li ng-repeat="cat in item.categories" class="cat_list col-lg-offset-1">{{cat}}</li>
+      </h4>
     </div>
     <div ng-view class="body col-lg-10 col-lg-offset-1">
     </div>

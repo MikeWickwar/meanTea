@@ -27,3 +27,17 @@ body{
 .searchBars > *{
   padding: 1%;
 }
+.items{
+  border: 1px solid black;
+}
+.cat_list{
+  padding-left: 27%;
+}
+.topitems{
+  display: flex;
+  justify-content: space-between;
+}
+.addtocart{
+  display: flex;
+  justify-content: space-between;
+}

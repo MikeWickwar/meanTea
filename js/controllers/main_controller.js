@@ -4,6 +4,7 @@ app.controller('MainController', ['$scope','$http','jsonService','catsService', 
 
   jsonService.get().then(function (data) {
     $scope.data = data.data;
+    console.log(data.data);
 
     $scope.data.forEach(function (item) {
       item.categories.forEach(function (cat) {
@@ -17,18 +18,6 @@ app.controller('MainController', ['$scope','$http','jsonService','catsService', 
     })
   }).then(function () {
     $scope.categories = catsService.get($scope.data)
+    })
 
-  })
-
-  // categories =  jsonService.get().then(function (data) {
-  //      data.forEach(function (item) {
-  //        item.categories.forEach(function (cat) {
-  //          if (($.inArray(cat, categories)) >= 0) {
-  //            console.log('i exsist');
-  //          }else {
-  //            categories.push(cat)
-  //          }
-  //        })
-  //      })
-  //      })
   }])
