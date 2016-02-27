@@ -1,5 +1,5 @@
-app.controller('MainController', ['$scope','$http','jsonService','catsService','cartService',
- function ($scope, $http, jsonService, catsService, cartService) {
+app.controller('MainController', ['$scope','$http','jsonService','catsService','cartService','$q',
+ function ($scope, $http, jsonService, catsService, cartService, $q) {
   console.log('made it to main control');
   var cats = [];
   $scope.sortby = "";
