@@ -4,6 +4,7 @@ app.controller('MainController', ['$scope','$http','jsonService','catsService','
   var cats = [];
   $scope.sortby = "";
   $scope.bagsize= "Bag is empty"
+  $scope.quantity=1;
   $scope.addItem = function (item) {
     cartService.post(item)
   }
@@ -17,9 +18,11 @@ app.controller('MainController', ['$scope','$http','jsonService','catsService','
         return deferred.promise
       }
       cart().then(function (cart) {
+        console.log(cart);
+        $scope.bagsize = 0;
         cart.forEach(function (item) {
           console.log(item.quantity);
-          $scope.bagsize =+ item.quantity;
+           $scope.bagsize += parseInt(item.quantity);
         })
 
       })

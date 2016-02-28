@@ -49,8 +49,7 @@ app.factory('cartService', function () {
         }
 
       })
-      cart.push(item)
-      return cart
+      return cart.push(item)
     }
   }
   return jsondata

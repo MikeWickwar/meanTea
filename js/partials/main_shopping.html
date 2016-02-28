@@ -26,7 +26,6 @@
     <span class="addtocart">
       <h1>Quantity</h1>
       <select class="quan" name="quan" ng-model="quantity">
-        <option value='1'></option>
         <option value="{{$index+2}}" ng-repeat="n in [].constructor(9) track by $index">{{$index+2}}</option>
       </select>
       <button class="btn btn-default" type="submit" ng-click="changeBag(); addItem({item: item.name, quantity:quantity})" name="button">Add To Cart</button>
