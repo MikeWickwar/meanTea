@@ -39,11 +39,10 @@ app.factory('cartService', function () {
     },
     post: function (item) {
       cart.forEach(function (thingInCart) {
-        console.log(thingInCart, item);
         if (item.item === thingInCart.item) {
           console.log('Iam already in here');
           item.quantity = parseInt(item.quantity) + parseInt(thingInCart.quantity);
-          item = {item:item.item, quantity:item.quantity};
+          item = {item:item.item, quantity:item.quantity, price:item.price};
           cart.splice(cart.indexOf(thingInCart), 1)
           console.log(thingInCart);
         }
@@ -51,6 +50,14 @@ app.factory('cartService', function () {
       })
       return cart.push(item)
     }
+    // total: function () {
+    //   var total = 0
+    //   cart.forEach(function (thingInCart) {
+    //     total += parseInt(thingInCart.price);
+    //     console.log(total);
+    //   })
+    //   return total
+    // }
   }
   return jsondata
 })
