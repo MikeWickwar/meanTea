@@ -7,7 +7,7 @@ app.controller('BagController', ['$scope','$http','jsonService','catsService','c
     deferred.resolve(cartService.get())
     return deferred.promise
   };
-  cart().then(function (cart) {
-    console.log(cart);
+  $scope.cart().then(function (cart) {
+    $scope.bigcart = cart;
   })
 }])
