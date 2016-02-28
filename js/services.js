@@ -41,7 +41,7 @@ app.factory('cartService', function () {
       cart.forEach(function (thingInCart) {
         console.log(thingInCart, item);
         if (item.item === thingInCart.item) {
-          console.log('Iam already inhere');
+          console.log('Iam already in here');
           item.quantity = parseInt(item.quantity) + parseInt(thingInCart.quantity);
           item = {item:item.item, quantity:item.quantity};
           cart.splice(cart.indexOf(thingInCart), 1)

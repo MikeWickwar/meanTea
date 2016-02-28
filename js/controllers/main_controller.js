@@ -9,10 +9,19 @@ app.controller('MainController', ['$scope','$http','jsonService','catsService','
   }
   $scope.changeBag = function () {
       console.log('you got it');
-      var cart  = cartService.get()
-      cart.forEach(function (item) {
-        console.log(item.quantity);
-        $scope.bagsize =+ item.quantity;
+      // var cart  = cartService.get()
+      var cart  = function () {
+        console.log('promise land');
+        var deferred = $q.defer();
+        deferred.resolve(cartService.get())
+        return deferred.promise
+      }
+      cart().then(function (cart) {
+        cart.forEach(function (item) {
+          console.log(item.quantity);
+          $scope.bagsize =+ item.quantity;
+        })
+
       })
 
   }
