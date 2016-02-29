@@ -18,13 +18,16 @@
         <h4>Rating: {{i.item.rating}}</h4>
       </td>
       <td>
-        <h4>{{i.quantity}}</h4>
+        <h4 ng-hide=!toggleQ>{{i.quantity}}</h4>
+      <div class="quan"  ng-hide=toggleQ>
+        <my-quan></my-quan>
+      </div>
       </td>
       <td>
         <h4>{{i.item.price / 100 | currency}}</h4>
       </td>
       <td>
-        <button class="btn-primary btn" type="button" name="edit button">Edit</button>
+        <button class="btn-primary btn" type="button" name="edit button" ng-click="edit()">Edit</button>
         <button class="btn-primary btn" type="button" name="remove button">Remove Item</button>
       </td>
     </tr>

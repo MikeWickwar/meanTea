@@ -1,7 +1,12 @@
 app.controller('BagController', ['$scope','$http','jsonService','catsService','cartService', '$q',
  function ($scope, $http, jsonService, catsService, cartService, $q) {
   console.log('made it to bag control');
-$scope.total = 0000
+  $scope.total = 0000
+  $scope.toggleQ = true;
+
+  $scope.edit = function () {
+    $scope.toggleQ = !$scope.toggleQ
+  }
   $scope.cart = function () {
     var deferred = $q.defer();
     deferred.resolve(cartService.get())
