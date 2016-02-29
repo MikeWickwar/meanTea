@@ -3,4 +3,30 @@
     <h1>My Shopping Bag!</h1>
     <h1>Order Total: {{total / 100 | currency}}</h1>
   </header>
+  <table class="col-lg-12">
+    <tr>
+      <th>Product</th>
+      <th>Quantity</th>
+      <th>sub-total</th>
+    </tr>
+    <tr ng-repeat="i in bigcart">
+      <td>
+        <img class="col-lg-4" src={{i.item.imageUrl}} alt="tea photo"/>
+        <h1>{{i.item.name}}</h1>
+        <h4>Caffeine Scale: {{i.item.caffeineScale}}</h4>
+        <h4>Ingredients: {{i.item.ingredients}}</h4>
+        <h4>Rating: {{i.item.rating}}</h4>
+      </td>
+      <td>
+        <h4>{{i.quantity}}</h4>
+      </td>
+      <td>
+        <h4>{{i.item.price / 100 | currency}}</h4>
+      </td>
+      <td>
+        <button class="btn-primary btn" type="button" name="edit button">Edit</button>
+        <button class="btn-primary btn" type="button" name="remove button">Remove Item</button>
+      </td>
+    </tr>
+  </table>
 </div>
