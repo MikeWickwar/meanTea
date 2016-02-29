@@ -59,3 +59,19 @@ button{
   display: flex;
   justify-content: space-between;
 }
+.ng-enter, .ng-show {
+  -webkit-transition: 1s;
+  transition: 1s;
+  opacity: 0;
+}
+.ng-enter-active, .ng-show-active {
+  opacity: 1;
+}
+.ng-leave {
+  -webkit-transition: 1s;
+  transition: 1s;
+  opacity: 1;
+}
+.ng-leave-active {
+  opacity: 0;
+}

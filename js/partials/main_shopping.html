@@ -19,7 +19,7 @@
   </span>
   <a href="/#/checkout"><button type="button" class="btn btn-primary">Checkout | Bag:({{bagsize}})</button></a>
 </div>
-<div ng-repeat="item in data | filter:searchable | filter:sortByCat | orderBy:sortByPrice" class="items col-lg-10 col-lg-offset-1">
+<div ng-repeat="item in data | filter:searchable | filter:{categories: sortByCat} | orderBy:sortByPrice" class="items col-lg-10 col-lg-offset-1">
   <img class="col-lg-4 imgdiv" src={{item.imageUrl}} alt="tea photo"/>
   <div class="topitems">
     <h1>{{item.name}}</h1>
