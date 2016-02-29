@@ -21,6 +21,7 @@
         <h4 ng-hide=!toggleQ>{{i.quantity}}</h4>
       <div class="quan"  ng-hide=toggleQ>
         <select class="quan" name="quan" ng-model="quantity" ng-change="edit({i:i, quantity:quantity})">
+          <option value="1">1</option>
           <option value="{{$index+2}}" ng-repeat="n in [].constructor(9) track by $index">{{$index+2}}</option>
         </select>
       </div>
@@ -30,7 +31,7 @@
       </td>
       <td>
         <button class="btn-primary btn" type="button" name="edit button" ng-click="edit()">Edit</button>
-        <button class="btn-primary btn" type="button" name="remove button">Remove Item</button>
+        <button class="btn-primary btn" type="button" name="remove button" ng-click="remove(i)">Remove Item</button>
       </td>
     </tr>
   </table>
