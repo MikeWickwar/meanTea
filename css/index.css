@@ -44,3 +44,7 @@ button{
   display: flex;
   justify-content: space-between;
 }
+.cartHead{
+  display: flex;
+  justify-content: space-between;
+}
