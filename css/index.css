@@ -13,6 +13,17 @@ button{
   height: 10vh;
   font-size: 150%;
 }
+.topitema{
+  display: flex;
+  align-items: center;
+}
+.addtocart{
+  display: flex;
+  align-items: center;
+}
+.addtocart > *{
+  margin: 2vh;
+}
 .mainHeaderBanner{
   font-size: 400%;
   font-weight: 600;
@@ -34,7 +45,7 @@ button{
   border: 1px solid black;
 }
 .cat_list{
-  padding-left: 27%;
+  padding-left: 3%;
 }
 .topitems{
   display: flex;

@@ -10,12 +10,14 @@
       <th>sub-total</th>
     </tr>
     <tr ng-repeat="i in bigcart">
-      <td>
+      <td class="col-lg-8">
         <img class="col-lg-4" src={{i.item.imageUrl}} alt="tea photo"/>
-        <h1>{{i.item.name}}</h1>
-        <h4>Caffeine Scale: {{i.item.caffeineScale}}</h4>
-        <h4>Ingredients: {{i.item.ingredients}}</h4>
-        <h4>Rating: {{i.item.rating}}</h4>
+        <div class="cgoods col-lg-7">
+          <h1>{{i.item.name}}</h1>
+          <h4>Caffeine Scale: {{i.item.caffeineScale}}</h4>
+          <h4>Ingredients: {{i.item.ingredients}}</h4>
+          <h4>Rating: {{i.item.rating}}</h4>
+        </div>
       </td>
       <td>
         <h4 ng-hide=!toggleQ>{{i.quantity}}</h4>
