@@ -12,7 +12,6 @@ app.factory('jsonService', function($http) {
     };
     return jsondata;
 });
-
 app.factory('catsService', function () {
   var categories = []
   var jsondata = {
@@ -30,7 +29,6 @@ app.factory('catsService', function () {
   }
   return jsondata
 })
-
 app.factory('cartService', function () {
   var cart = []
   var jsondata = {
@@ -50,14 +48,6 @@ app.factory('cartService', function () {
       })
       return cart.push(item)
     }
-    // total: function () {
-    //   var total = 0
-    //   cart.forEach(function (thingInCart) {
-    //     total += parseInt(thingInCart.price);
-    //     console.log(total);
-    //   })
-    //   return total
-    // }
   }
   return jsondata
 })

@@ -1,13 +1,11 @@
 app.controller('BagController', ['$scope','$http','jsonService','catsService','cartService', '$q',
  function ($scope, $http, jsonService, catsService, cartService, $q) {
-  console.log('made it to bag control');
   $scope.total = 0000
   $scope.toggleQ = true;
   $scope.quantity=0;
 
   $scope.edit = function (item, quantity) {
     $scope.toggleQ = !$scope.toggleQ
-    console.log(item,"+_+_+_+_+_+_");
     $scope.cart().then(function (cart) {
       cart.forEach(function (thingInCart) {
         if (thingInCart.item.name === item.i.item.name){
@@ -18,11 +16,9 @@ app.controller('BagController', ['$scope','$http','jsonService','catsService','c
     })
   }
   $scope.remove = function (item) {
-    console.log('hello', item);
     $scope.cart().then(function (cart) {
       cart.forEach(function (thingInCart) {
         if (thingInCart.item.name === item.item.name) {
-          console.log(thingInCart);
           $scope.total -= thingInCart.item.price * thingInCart.quantity
           cart.splice(cart.indexOf(thingInCart), 1);
         }
