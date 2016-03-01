@@ -5,6 +5,8 @@ app.controller('BagController', ['$scope','$http','jsonService','catsService','c
   $scope.quantity=0;
 
   $scope.edit = function (item, quantity) {
+    var itemtoggle = $scope.toggleQ+item.name
+    console.log(item);
     $scope.toggleQ = !$scope.toggleQ
     $scope.cart().then(function (cart) {
       cart.forEach(function (thingInCart) {
