@@ -3,12 +3,14 @@ app.controller('BagController', ['$scope','$http','jsonService','catsService','c
   $scope.total = 0000
   $scope.toggleQ = true;
   $scope.quantity=0;
-
+  $scope.hideme ={}
   $scope.hidethis = function (item) {
-
+    return $scope.hideme[item]
   }
-  $scope.edit = function (item, quantity) {
-    var itemtoggle = $scope.toggleQ+item.name
+  $scope.hideItem = function(itemId) {
+    $scope.hideme[item] = true;
+};
+  $scope.edit = function (item) {
     console.log(item);
     $scope.toggleQ = !$scope.toggleQ
     $scope.cart().then(function (cart) {
