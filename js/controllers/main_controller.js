@@ -16,7 +16,6 @@ app.controller('MainController', ['$scope','$http','jsonService','catsService','
       cart().then(function (cart) {
         $scope.bagsize = 0;
         cart.forEach(function (item) {
-          console.log(item.quantity);
            $scope.bagsize += parseInt(item.quantity);
         })
       })

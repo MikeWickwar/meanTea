@@ -10,12 +10,8 @@ button{
   color: white;
   background-color: red;
   text-align: center;
-  height: 10vh;
+  height: 5vh;
   font-size: 150%;
-}
-.topitema{
-  display: flex;
-  align-items: center;
 }
 .addtocart{
   display: flex;
@@ -47,15 +43,8 @@ button{
 .cat_list{
   padding-left: 3%;
 }
-.topitems{
-  display: flex;
-  justify-content: space-between;
-}
-.addtocart{
-  display: flex;
-  justify-content: space-between;
-}
-.cartHead{
+
+.addtocart, .topitems, .cartHead{
   display: flex;
   justify-content: space-between;
 }
