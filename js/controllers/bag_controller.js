@@ -7,7 +7,7 @@ app.controller('BagController', ['$scope','$http','jsonService','catsService','c
   $scope.hidethis = function (item) {
     return $scope.hideme[item]
   }
-  $scope.hideItem = function(itemId) {
+  $scope.hideItem = function(item) {
     $scope.hideme[item] = true;
 };
   $scope.edit = function (item) {
