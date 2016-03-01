@@ -4,6 +4,9 @@ app.controller('BagController', ['$scope','$http','jsonService','catsService','c
   $scope.toggleQ = true;
   $scope.quantity=0;
 
+  $scope.hidethis = function (item) {
+
+  }
   $scope.edit = function (item, quantity) {
     var itemtoggle = $scope.toggleQ+item.name
     console.log(item);

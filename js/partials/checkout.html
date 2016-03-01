@@ -20,8 +20,8 @@
         </div>
       </td>
       <td>
-        <h4 ng-hide="this.'!toggleQ'+i.item.name">{{i.quantity}}</h4>
-      <div class="quan"  ng-hide="this.'toggleQ'+i.item.name">
+        <h4 ng-hide="!toggleQ">{{i.quantity}}</h4>
+      <div class="quan"  ng-hide="hidethis(i.item.name)">
         <select class="quan" name="quan" ng-model="quantity" ng-change="edit({i:i, quantity:quantity})">
           <option value="1">1</option>
           <option value="{{$index+2}}" ng-repeat="n in [].constructor(9) track by $index">{{$index+2}}</option>
